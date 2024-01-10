@@ -1,4 +1,17 @@
+/* eslint-disable react/prop-types */
+import { STUDENTS_RESULT } from "../data/data";
+
 export default function StudentList() {
+    const classOneResults = STUDENTS_RESULT.filter(
+        (result) => result.class === "Class One"
+    );
+    const classTwoResults = STUDENTS_RESULT.filter(
+        (result) => result.class === "Class Two"
+    );
+    const classThreeResults = STUDENTS_RESULT.filter(
+        (result) => result.class === "Class Three"
+    );
+
     return (
         <div className="max-w-[848px] mx-auto overflow-auto">
             <table className="w-full">
@@ -20,7 +33,7 @@ export default function StudentList() {
                 </thead>
                 <tbody>
                     {/* class one */}
-                    <tr className="bg-white/5">
+                    {/* <tr className="bg-white/5">
                         <td className="p-5 text-sm md:text-xl" colSpan="4">
                             Class One
                         </td>
@@ -93,10 +106,10 @@ export default function StudentList() {
                         <td className="p-5 text-sm md:text-xl text-center">
                             98%
                         </td>
-                    </tr>
+                    </tr> */}
 
                     {/* class two */}
-                    <tr className="bg-white/5">
+                    {/* <tr className="bg-white/5">
                         <td className="p-5 text-sm md:text-xl" colSpan="4">
                             Class Two
                         </td>
@@ -169,9 +182,60 @@ export default function StudentList() {
                         <td className="p-5 text-sm md:text-xl text-center">
                             98%
                         </td>
+                    </tr> */}
+
+                    <tr className="bg-white/5">
+                        <td className="p-5 text-sm md:text-xl" colSpan="4">
+                            Class One
+                        </td>
                     </tr>
+                    {classOneResults.map((result) => (
+                        <TableRow key={result.id} data={result} />
+                    ))}
+
+                    <tr className="bg-white/5">
+                        <td className="p-5 text-sm md:text-xl" colSpan="4">
+                            Class Two
+                        </td>
+                    </tr>
+                    {classTwoResults.map((result) => (
+                        <TableRow key={result.id} data={result} />
+                    ))}
+
+                    <tr className="bg-white/5">
+                        <td className="p-5 text-sm md:text-xl" colSpan="4">
+                            Class Three
+                        </td>
+                    </tr>
+                    {classThreeResults.map((result) => (
+                        <TableRow key={result.id} data={result} />
+                    ))}
                 </tbody>
             </table>
         </div>
+    );
+}
+
+function TableRow({ data = {} }) {
+    const { id, name, scores, percentage } = data;
+
+    return (
+        <tr className="border-b border-[#7ECEB529]">
+            <td className="p-5 text-sm md:text-xl">{id}</td>
+            <td className="p-5 text-sm md:text-xl">
+                <div className="flex space-x-3 items-center">
+                    <img
+                        className="w-8 h-8"
+                        src="../assets/avatar.png"
+                        width="32"
+                        height="32"
+                        alt="John Smith"
+                    />
+                    <span className="whitespace-nowrap">{name}</span>
+                </div>
+            </td>
+            <td className="p-5 text-sm md:text-xl text-center">{scores}</td>
+            <td className="p-5 text-sm md:text-xl text-center">{percentage}</td>
+        </tr>
     );
 }
