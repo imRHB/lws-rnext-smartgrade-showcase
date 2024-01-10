@@ -5,7 +5,7 @@ export default function Navbar() {
                 <a href="/">
                     <img
                         className="h-[40px]"
-                        src="../assets/lws-logo-en.svg"
+                        src="./assets/lws-logo-en.svg"
                         alt="Lws"
                     />
                 </a>

@@ -4,18 +4,18 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Students from "./components/Students";
+import { STUDENT_RESULTS } from "./data/results";
 
 function App() {
+    console.log(STUDENT_RESULTS);
+
     return (
-        <div>
+        <>
             <Navbar />
             <Hero />
             <Students />
             <Footer />
-            {/* <h1 className="text-3xl font-bold">
-                SmartGrade Showcase | Learn with Sumit
-            </h1> */}
-        </div>
+        </>
     );
 }
 
