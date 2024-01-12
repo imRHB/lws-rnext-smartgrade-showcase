@@ -1,17 +1,7 @@
 /* eslint-disable react/prop-types */
-import { STUDENTS_RESULT } from "../data/data";
+import { STUDENTS_RESULT } from "../data/mock";
 
 export default function StudentList() {
-    const classOneResults = STUDENTS_RESULT.filter(
-        (result) => result.class === "Class One"
-    );
-    const classTwoResults = STUDENTS_RESULT.filter(
-        (result) => result.class === "Class Two"
-    );
-    const classThreeResults = STUDENTS_RESULT.filter(
-        (result) => result.class === "Class Three"
-    );
-
     return (
         <div className="max-w-[848px] mx-auto overflow-auto">
             <table className="w-full">
@@ -32,164 +22,12 @@ export default function StudentList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* class one */}
-                    {/* <tr className="bg-white/5">
-                        <td className="p-5 text-sm md:text-xl" colSpan="4">
-                            Class One
-                        </td>
-                    </tr>
-                    <tr className="border-b border-[#7ECEB529]">
-                        <td className="p-5 text-sm md:text-xl">1</td>
-                        <td className="p-5 text-sm md:text-xl">
-                            <div className="flex space-x-3 items-center">
-                                <img
-                                    className="w-8 h-8"
-                                    src="../assets/avatar.png"
-                                    width="32"
-                                    height="32"
-                                    alt="John Smith"
-                                />
-                                <span className="whitespace-nowrap">
-                                    John Smith
-                                </span>
-                            </div>
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            A+
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            98%
-                        </td>
-                    </tr>
-                    <tr className="border-b border-[#7ECEB529]">
-                        <td className="p-5 text-sm md:text-xl">2</td>
-                        <td className="p-5 text-sm md:text-xl">
-                            <div className="flex space-x-3 items-center">
-                                <img
-                                    className="w-8 h-8"
-                                    src="../assets/avatar.png"
-                                    width="32"
-                                    height="32"
-                                    alt="John Smith"
-                                />
-                                <span className="whitespace-nowrap">
-                                    John Smith
-                                </span>
-                            </div>
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            A+
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            98%
-                        </td>
-                    </tr>
-                    <tr className="border-b border-[#7ECEB529]">
-                        <td className="p-5 text-sm md:text-xl">3</td>
-                        <td className="p-5 text-sm md:text-xl">
-                            <div className="flex space-x-3 items-center">
-                                <img
-                                    className="w-8 h-8"
-                                    src="../assets/avatar.png"
-                                    width="32"
-                                    height="32"
-                                    alt="John Smith"
-                                />
-                                <span className="whitespace-nowrap">
-                                    John Smith
-                                </span>
-                            </div>
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            A+
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            98%
-                        </td>
-                    </tr> */}
-
-                    {/* class two */}
-                    {/* <tr className="bg-white/5">
-                        <td className="p-5 text-sm md:text-xl" colSpan="4">
-                            Class Two
-                        </td>
-                    </tr>
-                    <tr className="border-b border-[#7ECEB529]">
-                        <td className="p-5 text-sm md:text-xl">1</td>
-                        <td className="p-5 text-sm md:text-xl">
-                            <div className="flex space-x-3 items-center">
-                                <img
-                                    className="w-8 h-8"
-                                    src="../assets/avatar.png"
-                                    width="32"
-                                    height="32"
-                                    alt="John Smith"
-                                />
-                                <span className="whitespace-nowrap">
-                                    John Smith
-                                </span>
-                            </div>
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            A+
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            98%
-                        </td>
-                    </tr>
-                    <tr className="border-b border-[#7ECEB529]">
-                        <td className="p-5 text-sm md:text-xl">2</td>
-                        <td className="p-5 text-sm md:text-xl">
-                            <div className="flex space-x-3 items-center">
-                                <img
-                                    className="w-8 h-8"
-                                    src="../assets/avatar.png"
-                                    width="32"
-                                    height="32"
-                                    alt="John Smith"
-                                />
-                                <span className="whitespace-nowrap">
-                                    John Smith
-                                </span>
-                            </div>
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            A+
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            98%
-                        </td>
-                    </tr>
-                    <tr className="border-b border-[#7ECEB529]">
-                        <td className="p-5 text-sm md:text-xl">3</td>
-                        <td className="p-5 text-sm md:text-xl">
-                            <div className="flex space-x-3 items-center">
-                                <img
-                                    className="w-8 h-8"
-                                    src="../assets/avatar.png"
-                                    width="32"
-                                    height="32"
-                                    alt="John Smith"
-                                />
-                                <span className="whitespace-nowrap">
-                                    John Smith
-                                </span>
-                            </div>
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            A+
-                        </td>
-                        <td className="p-5 text-sm md:text-xl text-center">
-                            98%
-                        </td>
-                    </tr> */}
-
                     <tr className="bg-white/5">
                         <td className="p-5 text-sm md:text-xl" colSpan="4">
                             Class One
                         </td>
                     </tr>
-                    {classOneResults.map((result) => (
+                    {STUDENTS_RESULT["class-one"].map((result) => (
                         <TableRow key={result.id} data={result} />
                     ))}
 
@@ -198,7 +36,7 @@ export default function StudentList() {
                             Class Two
                         </td>
                     </tr>
-                    {classTwoResults.map((result) => (
+                    {STUDENTS_RESULT["class-two"].map((result) => (
                         <TableRow key={result.id} data={result} />
                     ))}
 
@@ -207,7 +45,7 @@ export default function StudentList() {
                             Class Three
                         </td>
                     </tr>
-                    {classThreeResults.map((result) => (
+                    {STUDENTS_RESULT["class-three"].map((result) => (
                         <TableRow key={result.id} data={result} />
                     ))}
                 </tbody>
@@ -225,8 +63,8 @@ function TableRow({ data = {} }) {
             <td className="p-5 text-sm md:text-xl">
                 <div className="flex space-x-3 items-center">
                     <img
-                        className="w-8 h-8"
-                        src="../assets/avatar.png"
+                        className="w-8 h-8 rounded-full"
+                        src={`https://i.pravatar.cc/80/${id}`}
                         width="32"
                         height="32"
                         alt="John Smith"
